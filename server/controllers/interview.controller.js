@@ -218,7 +218,12 @@ Make questions based on the candidate’s role, experience,interviewMode, projec
       questions: interview.questions
     });
   } catch (error) {
-    return res.status(500).json({message:`failed to create interview ${error}`})
+
+    console.error(error)
+
+    return res.status(500).json({
+      message:`failed to create interview ${error}`
+    })
   }
 }
 
