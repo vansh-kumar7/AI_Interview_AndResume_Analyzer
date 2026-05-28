@@ -11,6 +11,8 @@ import InterviewHistory from './pages/InterviewHistory'
 import Pricing from './pages/Pricing'
 import InterviewReport from './pages/InterviewReport'
 
+axios.defaults.withCredentials = true;
+
 export const ServerUrl  = import.meta.env.VITE_API_URL
 
 function App() {
