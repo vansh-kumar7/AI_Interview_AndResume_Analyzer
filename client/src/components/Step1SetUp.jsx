@@ -1,5 +1,5 @@
 import React from 'react'
-import { motion } from "motion/react"
+import { motion } from "framer-motion"
 import {
     FaUserTie,
     FaBriefcase,
@@ -57,15 +57,10 @@ function Step1SetUp({ onStart }) {
     const handleStart = async () => {
         setLoading(true)
         try {
+            
            const result = await axios.post(ServerUrl + "/api/interview/generate-questions" , {role, experience, mode , resumeText, projects, skills } , {withCredentials:true}) 
-           console.log({
-            role,
-            experience,
-            mode,
-            resumeText,
-            projects,
-            skills
-            })
+           console.log(result.data)
+           
            if(userData){
             dispatch(setUserData({...userData , credits:result.data.creditsLeft}))
            }
