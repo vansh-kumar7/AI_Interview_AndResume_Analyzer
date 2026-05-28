@@ -24,9 +24,10 @@ function Auth({isModel = false}) {
 
 
             
-        } catch (error) {
+        } catch(error){
             console.log(error)
-              dispatch(setUserData(null))
+            console.log(error.response)
+            console.log(error.response.data)
         }
     }
   return (
