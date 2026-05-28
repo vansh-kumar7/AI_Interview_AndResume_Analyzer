@@ -90,7 +90,7 @@ export const generateQuestion = async (req, res) => {
     experience = experience?.trim();
     mode = mode?.trim();
 
-    if (!role || !experience || !mode) {
+    if (role === "" || experience === undefined || mode === "") {
       return res.status(400).json({ message: "Role, Experience and Mode are required." })
     }
 
